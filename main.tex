@@ -1,4 +1,11 @@
+%!TEX program = lualatex
 \documentclass[a4paper,BCOR=15mm,bibtotoc]{scrbook}
+
+\input{config/general}
+\input{config/math}
+\input{config/font}
+\input{config/language}
+\input{config/misc}
 
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
@@ -44,7 +51,13 @@
 \usepackage{mathtools}
 \usepackage{siunitx}
 \usepackage{xfrac}
-\usepackage{unicode-math}
+\usepackage[
+  math-style=ISO,    %
+  bold-style=ISO,    %
+  sans-style=italic, %
+  nabla=upright,     %
+  partial=upright,   %
+]{unicode-math}
 \setmathfont{XITS Math}
 
 \usepackage{enumerate}
