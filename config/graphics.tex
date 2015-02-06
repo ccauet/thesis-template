@@ -1,0 +1,38 @@
+%!TEX root = ../main.tex
+
+% Include graphics
+\usepackage{graphicx}
+
+% Make Latex search fig subdir for figures
+\graphicspath{{./content/figures/}}
+
+% TIKZ
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{chains}
+\usetikzlibrary{circuits.logic.IEC,circuits.ee.IEC}
+\usetikzlibrary{decorations.pathmorphing}   % For Feynman Diagrams
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{fit}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{through}
+\usetikzlibrary{trees}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{patterns,fadings}
+\usetikzlibrary{intersections}
+
+%%%%%%%%%%%%%%%%
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+% its possible to generates PDFs and then include them back, WIP
+% \usepgfplotslibrary{external}
+% \tikzexternalize

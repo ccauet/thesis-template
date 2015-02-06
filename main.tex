@@ -1,108 +1,24 @@
 %!TEX program = lualatex
-\documentclass[a4paper,BCOR=15mm,bibtotoc]{scrbook}
+\documentclass[a4paper,BCOR=15mm,bibliography=totoc]{scrbook}
 
-\input{config/general}
+% packages
+\input{config/miscellaneous}
 \input{config/math}
-\input{config/font}
+\input{config/fonts}
+\input{config/layout}
 \input{config/language}
-\input{config/misc}
+\input{config/graphics}
+\input{config/references}
+\input{config/draft}
 
-\usepackage{fontspec}
-\defaultfontfeatures{Ligatures=TeX}
-  \setmainfont{AgfaRotisSansSerif}
-  \setsansfont{AgfaRotisSemiSerif}
-  \setmonofont{Anonymous Pro}
-
-\usepackage{scrpage2}
-  \pagestyle{scrheadings}
-  \renewcommand*{\figureformat}{Fig.~\thefigure\autodot}
-  \renewcommand*{\tableformat}{Tab.~\thetable\autodot}
-
-\usepackage{csquotes}
-\usepackage{polyglossia}
-\setdefaultlanguage{german}
-
-\usepackage[style=numeric-comp,backend=biber]{biblatex}
-\addbibresource{bibliography.bib}
-
-\usepackage{hyperref}
-\hypersetup{
-    unicode=true,
-    pdfencoding=auto,
-    pdfauthor = {N.N., n.n@uni.de},
-    pdftitle = {Generic Title},
-    pdfsubject = {Special Topic},
-    pdfkeywords = {Keyword One, Keyword Two},
-    pdfcreator = {LaTeX with hyperref package},
-    pdfproducer = {lualatex}
-    }
-
-\usepackage{cleveref}
-\crefname{chapter}{Ch.\@}{Chs.\@}
-\crefname{section}{Sec.\@}{Secs.\@}
-\crefname{subsection}{Sec.\@}{Secs.\@}
-\crefname{figure}{Fig.\@}{Figs.\@}
-\crefname{table}{Tab.\@}{Tab.\@}
-\crefname{equation}{Eq.\@}{Eqs.\@}
-
-\usepackage{microtype}
-
-%\usepackage{amsmath}
-\usepackage{mathtools}
-\usepackage{siunitx}
-\usepackage{xfrac}
-\usepackage[
-  math-style=ISO,    %
-  bold-style=ISO,    %
-  sans-style=italic, %
-  nabla=upright,     %
-  partial=upright,   %
-]{unicode-math}
-\setmathfont{XITS Math}
-
-\usepackage{enumerate}
-
-\usepackage{graphicx}
-
-% \usepackage{minted}
-
-\usepackage{booktabs}
-\usepackage{tabulary}
-\usepackage{threeparttable}
-
-% only for debugging and review
-\usepackage{blindtext}
-%\usepackage{lineno}
-
-%% fix to allow peaceful coexistence of line numbering and
-%% mathematical objects
-%% http://www.latex-community.org/forum/viewtopic.php?f=5&t=163
-%%
-% \newcommand*\patchAmsMathEnvironmentForLineno[1]{%
-% \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
-% \expandafter\let\csname oldend#1\expandafter\endcsname\csname
-% end#1\endcsname
-%  \renewenvironment{#1}%
-%    {\linenomath\csname old#1\endcsname}%
-%    {\csname oldend#1\endcsname\endlinenomath}%
-% }
-% \newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
-%   \patchAmsMathEnvironmentForLineno{#1}%
-%   \patchAmsMathEnvironmentForLineno{#1*}%
-% }
-% \AtBeginDocument{%
-% \patchBothAmsMathEnvironmentsForLineno{equation}%
-% \patchBothAmsMathEnvironmentsForLineno{align}%
-% \patchBothAmsMathEnvironmentsForLineno{flalign}%
-% \patchBothAmsMathEnvironmentsForLineno{alignat}%
-% \patchBothAmsMathEnvironmentsForLineno{gather}%
-% \patchBothAmsMathEnvironmentsForLineno{multline}%
-% }
+% definitions
+\input{definitions/abbreviations}
+\input{definitions/counter}
 
 \begin{document}
 
 \frontmatter
-  \input{titlepage}
+  \include{content/titlepage}
   \tableofcontents
 
 \mainmatter

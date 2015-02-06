@@ -1,0 +1,30 @@
+%!TEX root = ../main.tex
+
+% BibLaTeX
+\usepackage[backend=biber%
+           ]{biblatex}
+
+\DeclareLanguageMapping{german}{german-apa}
+\addbibresource{references/bibliography.bib}
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,
+    pdfencoding=auto,
+    pdfauthor = {N.N., n.n@uni.de},
+    pdftitle = {Generic Title},
+    pdfsubject = {Special Topic},
+    pdfkeywords = {Keyword One, Keyword Two},
+    pdfcreator = {LaTeX with hyperref package},
+    pdfproducer = {lualatex}
+    }
+
+% \usepackage[german]{varioref}
+
+\usepackage{cleveref}
+  \crefname{chapter}{Ch.\@}{Chs.\@}
+  \crefname{section}{Sec.\@}{Secs.\@}
+  \crefname{subsection}{Sec.\@}{Secs.\@}
+  \crefname{figure}{Fig.\@}{Figs.\@}
+  \crefname{table}{Tab.\@}{Tab.\@}
+  \crefname{equation}{Eq.\@}{Eqs.\@}
