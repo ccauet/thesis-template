@@ -12,7 +12,7 @@
 \input{config/draft}
 
 % definitions
-\input{definitions/abbreviations}
+\input{definitions/acronyms/acronyms}
 \input{definitions/counter}
 
 \begin{document}
@@ -22,18 +22,22 @@
   \tableofcontents
 
 \mainmatter
-  \chapter{Introduction}
-  \blindtext
-  \section{The Theoretical Background}
-  \blindmathpaper
-  \section{The Experimental Setüp}
-  \blindmathpaper
-  \chapter{Analysis}
-  \blindtext
-  \section{Method Discription}
-  \blindmathpaper
-  \section{Analysing the Data}
-  \blindmathpaper
+
+\include{content/test}
+  % \chapter{Introduction}
+  % \blindtext
+  % \section{The Theoretical Background}
+  % \blindmathpaper
+  % \section{The Experimental Setüp}
+  % \blindmathpaper
+  % \chapter{Analysis}
+  % \blindtext
+  % \section{Method Discription}
+  % \blindmathpaper
+  % \section{Analysing the Data}
+  % \blindmathpaper
+
+
 
 \backmatter
   \nocite{*}
