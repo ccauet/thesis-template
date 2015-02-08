@@ -5,8 +5,38 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+% fractions
+\usepackage{xfrac}
+
 % setting SI units
 \usepackage{siunitx}
 
-% fractions
-\usepackage{xfrac}
+\DeclareSIUnit\clight{\ensuremath{c}}
+
+\DeclareSIUnit\rad{\radian}
+\DeclareSIUnit\mrad{\milli\rad} 
+
+\DeclareSIUnit\micron{\micro\metre} 
+
+\DeclareSIUnit\nanobarn{\nano\barn} 
+\DeclareSIUnit\picobarn{\pico\barn} 
+\DeclareSIUnit\femtobarn{\femto\barn} 
+\DeclareSIUnit\attobarn{\atto\barn}
+\DeclareSIUnit\nb{\nano\barn} 
+\DeclareSIUnit\pb{\pico\barn} 
+\DeclareSIUnit\fb{\femto\barn} 
+\DeclareSIUnit\ab{\atto\barn} 
+\DeclareSIUnit\zb{\zepto\barn} 
+\DeclareSIUnit\yb{\yocto\barn}
+
+\DeclareSIUnit[per-mode=symbol]\eVc{\eV\per\clight}
+\DeclareSIUnit[per-mode=symbol]\keVc{\kilo\eV\per\clight}
+\DeclareSIUnit[per-mode=symbol]\MeVc{\mega\eV\per\clight}
+\DeclareSIUnit[per-mode=symbol]\GeVc{\giga\eV\per\clight}
+\DeclareSIUnit[per-mode=symbol]\TeVc{\tera\eV\per\clight}
+
+\DeclareSIUnit[per-mode=symbol]\eVcc{\eV\per\square\clight}
+\DeclareSIUnit[per-mode=symbol]\keVcc{\kilo\eV\per\square\clight}
+\DeclareSIUnit[per-mode=symbol]\MeVcc{\mega\eV\per\square\clight}
+\DeclareSIUnit[per-mode=symbol]\GeVcc{\giga\eV\per\square\clight}
+\DeclareSIUnit[per-mode=symbol]\TeVcc{\tera\eV\per\square\clight}
