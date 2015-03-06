@@ -6,5 +6,5 @@
 ***Requirements***
 - LuaLaTeX
 
-***How to work with this template**
+***How to work with this template***   
 _tbc_
