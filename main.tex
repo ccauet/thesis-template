@@ -2,29 +2,23 @@
 \documentclass[a4paper,BCOR=15mm,bibliography=totoc]{scrbook}
 
 % packages
-\input{config/miscellaneous}
-\input{config/math}
-\input{config/fonts}
-\input{config/layout}
-\input{config/language}
-\input{config/graphics}
-\input{config/references}
-\input{config/draft}
+\input{common/config/config.tex}
+\input{private/config/config.tex}
 
 % definitions
-\input{definitions/abbreviations/abbreviations}
-\input{definitions/acronyms/acronyms}
-\input{definitions/counter}
+\input{common/definitions/abbreviations/abbreviations}
+\input{common/definitions/acronyms/acronyms}
+\input{common/definitions/counter}
 
 \begin{document}
 
 \frontmatter
-  \include{content/titlepage}
+  \include{private/content/titlepage}
   \tableofcontents
-
+  
 \mainmatter
 
-\include{content/test}
+\input{private/content/test}
   % \chapter{Introduction}
   % \blindtext
   % \section{The Theoretical Background}
