@@ -15,14 +15,12 @@ This thesis template is based on a private/common layout, i.e. large parts are s
 │   ├── content.tex
 │   └── titlepage
 │       └── titlepage.tex
-├── definitions
-│   ├── abbreviations
-│   │   └── abbreviations.tex
-│   ├── acronyms
-│   │   └── acronyms.tex
-│   └── counter.tex
-└── references
-    └── bibliography.bib
+└── definitions
+    ├── abbreviations
+    │   └── abbreviations.tex
+    ├── acronyms
+    │   └── acronyms.tex
+    └── counter.tex
 ```
 
 To make use of ```%!TEX root = ..``` in your editor, create a second symlink called ```common``` in your private file hierarchy.
