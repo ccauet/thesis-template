@@ -1,6 +1,6 @@
 # Thesis template
 
-- Authors: Christophe Cauet (christophe@cauet.de), Florian Kruse
+- Authors: Christophe Cauet (christophe@cauet.de), Florian Kruse (pa@floriankru.se)
 - Date: 2014-06-29
 
 ***How to work with this template***   
