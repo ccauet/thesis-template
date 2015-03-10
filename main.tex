@@ -3,25 +3,28 @@
 
 % packages
 \input{common/config/config.tex}
-\input{private/config/config.tex}
+\InputIfFileExists{private/config/config.tex}{}{}
 
 % definitions
 \input{common/definitions/abbreviations/abbreviations}
 \input{common/definitions/acronyms/acronyms}
 \input{common/definitions/counter}
-\input{private/definitions/abbreviations/abbreviations}
-\input{private/definitions/acronyms/acronyms}
-\input{private/definitions/counter}
+\InputIfFileExists{private/definitions/abbreviations/abbreviations}{}{}
+\InputIfFileExists{private/definitions/acronyms/acronyms}{}{}
+\InputIfFileExists{private/definitions/counter}{}{}
 
 \begin{document}
 
 \frontmatter
-  \include{private/content/titlepage/titlepage}
+  \IfFileExists{private/content/titlepage/titlepage}{
+    \include{private/content/titlepage/titlepage}
+  }{}
   \tableofcontents
   
 \mainmatter
 
-\input{private/content/content}
+\InputIfFileExists{private/content/content}{}{}
+%\input{private/content/content}
 
 \backmatter
   \nocite{*}
