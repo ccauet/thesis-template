@@ -26,3 +26,9 @@ To make use of ```%!TEX root = ..``` in your editor, create a second symlink cal
 
 ***git-annex***   
 User guides for all used packages can be found in [doc/](/doc/) using [git-annex](http://git-annex.branchable.com).
+
+Useful fonts can be found in [fonts/](/fonts/) using [git-annex](http://git-annex.branchable.com).
+
+## Font setup
+
+The directory [common/config/fonts/](/common/config/fonts/) contains sets of matching fonts that can be activated with a simple include in your own ```private/config/``` setup.
