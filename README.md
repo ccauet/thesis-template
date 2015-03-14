@@ -1,7 +1,6 @@
 # Thesis template
 
 - Authors: Christophe Cauet (christophe@cauet.de), Florian Kruse (pa@floriankru.se)
-- Date: 2014-06-29
 
 ***How to work with this template***   
 This thesis template is based on a private/common layout, i.e. large parts are shared between collaborators (config, definitions, references) while the main content is stored elsewhere. To work with this template, you should create a file hierarchy with the following minimal structure and create a symlink named ```private``` pointing there. 
