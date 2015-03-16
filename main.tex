@@ -2,16 +2,12 @@
 \documentclass[a4paper,BCOR=15mm,bibliography=totoc]{scrbook}
 
 % packages
-\input{common/config/config.tex}
-\InputIfFileExists{private/config/config.tex}{}{}
+\input{common/config/config}
+\InputIfFileExists{private/config/config}{}{}
 
 % definitions
-\input{common/definitions/abbreviations/abbreviations}
-\input{common/definitions/acronyms/acronyms}
-\input{common/definitions/counter}
-\InputIfFileExists{private/definitions/abbreviations/abbreviations}{}{}
-\InputIfFileExists{private/definitions/acronyms/acronyms}{}{}
-\InputIfFileExists{private/definitions/counter}{}{}
+\input{common/definitions/definitions}
+\InputIfFileExists{private/definitions/definitions}{}{}
 
 \begin{document}
 
