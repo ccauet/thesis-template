@@ -31,3 +31,9 @@ Useful fonts can be found in [fonts/](/fonts/) using [git-annex](http://git-anne
 ## Font setup
 
 The directory [common/config/fonts/](/common/config/fonts/) contains sets of matching fonts that can be activated with a simple include in your own ```private/config/``` setup.
+
+## Script
+
+***wordcount.py***   
+Create word count for all files in [private/content/](/private/content) and writes log file including timestamp to [private/](/private/).
+__Dependencies__: [texcount](http://app.uio.no/ifi/texcount/) and the python modules: os, [pexpect](https://pexpect.readthedocs.org/en/latest/), fnmatch, datetime, [pytz](http://pytz.sourceforge.net)
