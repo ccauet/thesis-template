@@ -1,34 +1,43 @@
 %!TEX root = ../../../main.tex
 
-\def\electron   {\ensuremath{\mathrm{e}}\xspace}
-\def\ep         {\ensuremath{\electron^+}\xspace}
-\def\en         {\ensuremath{\electron^-}\xspace}
-\def\epm        {\ensuremath{\electron^\pm}\xspace}
-\def\epem       {\ensuremath{\electron^+\electron^-}\xspace}
+%===============================================================================
+%% Leptons
 
-\def\muon       {\ensuremath{\mu}\xspace}
-\def\mup        {\ensuremath{\muon^+}\xspace}
-\def\mun        {\ensuremath{\muon^-}\xspace}
-\def\mupm       {\ensuremath{\muon^\pm}\xspace}
-\def\mumu       {\ensuremath{\muon^+\muon^-}\xspace}
+\newcommand{\lepton}{\ensuremath{l}\xspace}
+\newcommand{\lepp}{\ensuremath{\lepton^+}\xspace}
+\newcommand{\lepm}{\ensuremath{\lepton^-}\xspace}
+\newcommand{\leppm}{\ensuremath{\lepton^\pm}\xspace}
+\newcommand{\leplep}{\ensuremath{\lepp\lepm}\xspace}
 
-\def\tauz       {\ensuremath{\tau}\xspace}
-\def\taup       {\ensuremath{\tau^+}\xspace}
-\def\taum       {\ensuremath{\tau^-}\xspace}
-\def\taupm      {\ensuremath{\tau^\pm}\xspace}
-\def\tautau     {\ensuremath{\tau^+\tau^-}\xspace}
+\newcommand{\electron}{\ensuremath{e}\xspace}
+\newcommand{\elp}{\ensuremath{\electron^+}\xspace}
+\newcommand{\elm}{\ensuremath{\electron^-}\xspace}
+\newcommand{\elpm}{\ensuremath{\electron^\pm}\xspace}
+\newcommand{\elel}{\ensuremath{\elp\elm}\xspace}
 
-\def\neutrino   {\ensuremath{\nu}\xspace}
-\def\neutrinobar{\ensuremath{\overline{\neutrino}}\xspace}
+\newcommand{\muon}{\ensuremath{\mu}\xspace}
+\newcommand{\mup}{\ensuremath{\muon^+}\xspace}
+\newcommand{\mum}{\ensuremath{\muon^-}\xspace}
+\newcommand{\mupm}{\ensuremath{\muon^\pm}\xspace}
+\newcommand{\mumu}{\ensuremath{\mup\mum}\xspace}
 
-\def\neutrinoe  {\ensuremath{\neutrino_\electron}\xspace}
-\def\neutrinoeb {\ensuremath{\neutrinob_\electron}\xspace}
+\newcommand{\tauon}{\ensuremath{\tau}\xspace}
+\newcommand{\taup}{\ensuremath{\tauon^+}\xspace}
+\newcommand{\taum}{\ensuremath{\tauon^-}\xspace}
+\newcommand{\taupm}{\ensuremath{\tauon^\pm}\xspace}
+\newcommand{\tautau}{\ensuremath{\taup\taum}\xspace}
 
-\def\neutrinom  {\ensuremath{\neutrino_\muon}\xspace}
-\def\neutrinomb {\ensuremath{\neutrinob_\muon}\xspace}
+\newcommand{\neutrino}{\ensuremath{\nu}\xspace}
+\newcommand{\neutrinob}{\ensuremath{\ovE \neutrino}\xspace}
 
-\def\neutrinot  {\ensuremath{\neutrino_\tauz}\xspace}
-\def\neutrinotb {\ensuremath{\neutrinob_\tauz}\xspace}
+\newcommand{\nuel}{\ensuremath{\neutrino_\electron}\xspace}
+\newcommand{\nuelb}{\ensuremath{\neutrinob_\electron}\xspace}
 
-\def\neutrinol  {\ensuremath{\neutrino_\ell}\xspace}
-\def\neutrinolb {\ensuremath{\neutrinob_\ell}\xspace}
+\newcommand{\numu}{\ensuremath{\neutrino_\muon}\xspace}
+\newcommand{\numub}{\ensuremath{\neutrinob_\muon}\xspace}
+
+\newcommand{\nutau}{\ensuremath{\neutrino_\tauon}\xspace}
+\newcommand{\nutaub}{\ensuremath{\neutrinob_\tauon}\xspace}
+
+\newcommand{\nulep}{\ensuremath{\neutrino_\lepton}\xspace}
+\newcommand{\nulepb}{\ensuremath{\neutrinob_\lepton}\xspace}

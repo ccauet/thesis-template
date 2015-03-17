@@ -3,10 +3,14 @@
 
 % packages
 \input{common/config/config}
-\InputIfFileExists{private/config/config}{}{}
 
 % definitions
 \input{common/definitions/definitions}
+
+% private packages
+\InputIfFileExists{private/config/config}{}{}
+
+% private definitions
 \InputIfFileExists{private/definitions/definitions}{}{}
 
 \begin{document}
