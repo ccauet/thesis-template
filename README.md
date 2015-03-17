@@ -35,5 +35,5 @@ The directory [common/config/fonts/](/common/config/fonts/) contains sets of mat
 ## Scripts
 
 ***wordcount.py***   
-Create word count for all files in [private/content/](/private/content) and writes log file including timestamp to [private/](/private/).
+Create word count for all files in [private/content/](/private/content) and write log file including timestamp to [private/](/private/).
 _Dependencies_: [texcount](http://app.uio.no/ifi/texcount/) and the python modules: os, [pexpect](https://pexpect.readthedocs.org/en/latest/), fnmatch, datetime, [pytz](http://pytz.sourceforge.net)
