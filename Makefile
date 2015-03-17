@@ -26,7 +26,8 @@ all: $(OUTPUT)
 # remove temporary files (good idea to say "make clean" before putting things back into repository)
 .PHONY : clean
 clean:
-	rm -f *~ *.aux *.log *.bbl *.blg *.dvi *.tmp *.out *.blg *.bbl *.fdb_latexmk *.fls *.idx *.ilg *.ind *.tdo *.toc *.bcf *.run.xml $(MAIN)$(MAINEXT) $(MAIN).ps
+	./cleanup.sh
+	rm -f $(MAIN)$(MAINEXT) $(MAIN).ps
 
 # remove output file
 rmout: 
