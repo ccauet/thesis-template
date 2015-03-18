@@ -6,6 +6,7 @@
 \renewcommand{\to}        {\ensuremath{\rightarrow}\xspace}
 \newcommand{\decay}[2]    {\ensuremath{#1\!\to #2}\xspace}
 
+%% Common decays 
 \newcommand{\BdToJpsiKS}      {\decay{\Bd}{\jpsi\KS}}
 \newcommand{\BsToJpsiKS}      {\decay{\Bs}{\jpsi\KS}}
 \newcommand{\BdToPsiTwoSKS}   {\decay{\Bd}{\psi(2S)\KS}}
@@ -20,3 +21,12 @@
 \newcommand{\BdToDstmunu}     {\decay{\Bd}{\Dstarm\mup\neum}}
 \newcommand{\BsToDsPi}        {\decay{\Bs}{\Ds\pim}}
 \newcommand{\inclJPsi}        {inclusive \jpsi}
+
+%% Decays to be used in headings with bold, sans, italic math font
+\newcommand{\BdToJpsiKSbfsf}  {\ensuremath{\mathbfsfit{
+  \decay{B^{\mathsf{0}}}{\jpsi K_\text{S}^{\mathsf{0}}}   
+}}}
+\newcommand{\BsToJpsiKSbfsf}  {\ensuremath{\mathbfsfit{
+  \decay{B_s^{\mathsf{0}}}{\jpsi K_\text{S}^{\mathsf{0}}}   
+}}}
+
