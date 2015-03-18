@@ -8,7 +8,7 @@ import pytz
 from pytz import timezone
 
 file_exclude_list = ['tests.tex', 'titlepage.tex']
-file_to_write = '/private/wordcount.txt'
+file_to_write = 'private/wordcount.txt'
 
 def create_file_list(cwd):
   tex_files = []
@@ -25,7 +25,8 @@ def create_file_list(cwd):
   return tex_files
 
 if __name__ == "__main__":
-  cwd = os.getcwdu()
+  #cwd = os.getcwdu()
+  cwd = os.path.dirname(os.path.realpath(__file__))
   print "Counting words..."
   n_total = 0
   files = create_file_list(cwd)
@@ -35,5 +36,5 @@ if __name__ == "__main__":
     n_total += n
     print f, n
   print 'Total:', n_total
-  with open(cwd+file_to_write, "a") as f:
+  with open(os.path.join(cwd,file_to_write), "a") as f:
     f.write(datetime.datetime.now(timezone('Europe/Berlin')).isoformat()+'\t'+str(n_total)+'\n')
