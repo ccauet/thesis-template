@@ -4,6 +4,7 @@ import os
 import pexpect
 import fnmatch
 import datetime
+import argparse
 import pytz
 from pytz import timezone
 
@@ -25,16 +26,23 @@ def create_file_list(cwd):
   return tex_files
 
 if __name__ == "__main__":
+  parser = argparse.ArgumentParser() #
+  parser.add_argument('-s', '--silent', dest='silent', action='store_true', help='silent mode: suppress all output')
+  args = parser.parse_args()
+
   #cwd = os.getcwdu()
   cwd = os.path.dirname(os.path.realpath(__file__))
-  print "Counting words..."
+  if not args.silent:
+    print "Counting words..."
   n_total = 0
   files = create_file_list(cwd)
   # get wordcount for all files in /private/content/; exceptions specified in file_exclude_list
   for r,f in files:
     n = int(pexpect.run('/usr/texbin/texcount -sum=1,1,1,0,0,1,16 -brief -1 -utf8 '+r+'/'+f))
     n_total += n
-    print f, n
-  print 'Total:', n_total
+    if not args.silent:
+      print f, n
+  if not args.silent:
+    print 'Total:', n_total
   with open(os.path.join(cwd,file_to_write), "a") as f:
     f.write(datetime.datetime.now(timezone('Europe/Berlin')).isoformat()+'\t'+str(n_total)+'\n')
