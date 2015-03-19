@@ -9,6 +9,8 @@
 %% Common decays 
 \newcommand{\BdToJpsiKS}      {\decay{\Bd}{\jpsi\KS}}
 \newcommand{\BsToJpsiKS}      {\decay{\Bs}{\jpsi\KS}}
+\newcommand{\BsdToJpsiKS}     {\decay{\Bsd}{\jpsi\KS}}
+\newcommand{\BToJpsiKS}       {\decay{\B}{\jpsi\KS}}
 \newcommand{\BdToPsiTwoSKS}   {\decay{\Bd}{\psi(2S)\KS}}
 \newcommand{\BdToJpsiX}       {\decay{\Bd}{\jpsi X}}
 \newcommand{\LbToJpsiLambda}  {\decay{\Lb}{\jpsi\L}}
@@ -25,14 +27,25 @@
 %% Decays to be used in headings with bold, sans, italic math font (makes sure 
 %  all characters use the proper font)
 \newcommand{\BdToJpsiKSbfsf}  {\ensuremath{\mathbfsfit{
-  \decay{B^{\mathsf{0}}}{\jpsi K_\text{S}^{\mathsf{0}}}   
+  \decay{\B^{\mathsf{0}}}{\jpsi K_\text{S}^{\mathsf{0}}}   
 }}\xspace}
 \newcommand{\BsToJpsiKSbfsf}  {\ensuremath{\mathbfsfit{
-  \decay{B_s^{\mathsf{0}}}{\jpsi K_\text{S}^{\mathsf{0}}}   
+  \decay{\B_\squark^{\mathsf{0}}}{\jpsi K_\text{S}^{\mathsf{0}}}   
 }}\xspace}
+\newcommand{\BsdToJpsiKSbfsf} {\ensuremath{\mathbfsfit{
+  \decay{\B_{(\squark)}^{\mathsf{0}}}{\jpsi K_\text{S}^{\mathsf{0}}}   
+}}\xspace}
+\newcommand{\BToJpsiKSbfsf}   {\ensuremath{\mathbfsfit{
+  \decay{\B}{\jpsi K_\text{S}^{\mathsf{0}}}   
+}}\xspace}
+
 
 %% Decays with hyperref-compatible text alternative
 \newcommand{\BdToJpsiKSbfsfHyperref}{\texorpdfstring{\BdToJpsiKSbfsf}{B0→J/ψKS0}\xspace}
 \newcommand{\BdToJpsiKSHyperref}{\texorpdfstring{\BdToJpsiKS}{B0→J/ψKS0}\xspace}
-\newcommand{\BsToJpsiKSbfsfHyperref}{\texorpdfstring{\BsToJpsiKSbfsf}{Bs→J/ψKS0}\xspace}
-\newcommand{\BsToJpsiKSHyperref}{\texorpdfstring{\BsToJpsiKS}{Bs→J/ψKS0}\xspace}
+\newcommand{\BsToJpsiKSbfsfHyperref}{\texorpdfstring{\BsToJpsiKSbfsf}{Bs0→J/ψKS0}\xspace}
+\newcommand{\BsToJpsiKSHyperref}{\texorpdfstring{\BsToJpsiKS}{Bs0→J/ψKS0}\xspace}
+\newcommand{\BsdToJpsiKSbfsfHyperref}{\texorpdfstring{\BsdToJpsiKSbfsf}{B(s)0→J/ψKS0}\xspace}
+\newcommand{\BsdToJpsiKSHyperref}{\texorpdfstring{\BsdToJpsiKS}{B(s)0→J/ψKS0}\xspace}
+\newcommand{\BToJpsiKSbfsfHyperref}{\texorpdfstring{\BToJpsiKSbfsf}{B→J/ψKS0}\xspace}
+\newcommand{\BToJpsiKSHyperref}{\texorpdfstring{\BToJpsiKS}{B→J/ψKS0}\xspace}
