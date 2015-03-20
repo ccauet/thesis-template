@@ -1,7 +1,7 @@
 %!TEX root = ../../main.tex
 
 % to-do notes
-\usepackage[colorinlistoftodos]{todonotes}  
+\usepackage[colorinlistoftodos]{todonotes}
 % predefined todonote commands
 % mark missing reference
 \newcommand{\addref}[1]{\todo[color=cyan, bordercolor=lightgray]{\textit{Add Ref:} #1}}
@@ -11,6 +11,21 @@
 % add the following lines to your private config if desired:
 % \presetkeys{todonotes}{disable}{}      to disable todonotes
 % \presetkeys{todonotes}{inline}{}       to have 'inline' option as default
+
+\usepackage{regexpatch}
+\xapptocmd{\Hy@org@chapter}{\addtocontents{tdo}{\protect\todoline{\thechapter}{\spacedlowsmallcaps{#1}}{\thepage}}}{}{}
+\makeatletter
+\newcommand{\todoline}[1]{\@ifnextchar\Endoftdo{}{\@todoline{#1}}}
+\newcommand{\@todoline}[3]{%
+  \@ifnextchar\todoline
+    {}
+    {\contentsline{chapter}{\numberline{#1}#2}{#3}{}{}}%
+}
+\let\l@todo\l@section
+\makeatother
+\newcommand{\Endoftdo}{}
+\AtEndDocument{\addtocontents{tdo}{\string\Endoftdo}}
+
 
 % Blindtext
 \usepackage{blindtext}
