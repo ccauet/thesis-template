@@ -1,9 +1,16 @@
 %!TEX root = ../../main.tex
 
 % to-do notes
-% add \listoftodos after \begin{document} to activate
-% add option 'disable' to remove all notes
 \usepackage[colorinlistoftodos]{todonotes}  
+% predefined todonote commands
+% mark missing reference
+\newcommand{\addref}[1]{\todo[color=cyan, bordercolor=lightgray]{\textit{Add Ref:} #1}}
+% highlight text and add note
+\usepackage{soul}
+\newcommand{\replace}[2]{\texthl{#1}\todo[color=yellow, bordercolor=lightgray]{\textit{Replace by:} #2}}
+% add the following lines to your private config if desired:
+% \presetkeys{todonotes}{disable}{}      to disable todonotes
+% \presetkeys{todonotes}{inline}{}       to have 'inline' option as default
 
 % Blindtext
 \usepackage{blindtext}
@@ -15,7 +22,6 @@
 % fix to allow peaceful coexistence of line numbering and
 % mathematical objects
 % http://www.latex-community.org/forum/viewtopic.php?f=5&t=163
-%
 \newcommand*\patchAmsMathEnvironmentForLineno[1]{%
 \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
 \expandafter\let\csname oldend#1\expandafter\endcsname\csname
