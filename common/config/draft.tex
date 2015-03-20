@@ -12,21 +12,6 @@
 % \presetkeys{todonotes}{disable}{}      to disable todonotes
 % \presetkeys{todonotes}{inline}{}       to have 'inline' option as default
 
-\usepackage{regexpatch}
-\xapptocmd{\Hy@org@chapter}{\addtocontents{tdo}{\protect\todoline{\thechapter}{\spacedlowsmallcaps{#1}}{\thepage}}}{}{}
-\makeatletter
-\newcommand{\todoline}[1]{\@ifnextchar\Endoftdo{}{\@todoline{#1}}}
-\newcommand{\@todoline}[3]{%
-  \@ifnextchar\todoline
-    {}
-    {\contentsline{chapter}{\numberline{#1}#2}{#3}{}{}}%
-}
-\let\l@todo\l@section
-\makeatother
-\newcommand{\Endoftdo}{}
-\AtEndDocument{\addtocontents{tdo}{\string\Endoftdo}}
-
-
 % Blindtext
 \usepackage{blindtext}
 
