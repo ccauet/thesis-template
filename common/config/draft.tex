@@ -15,10 +15,10 @@
 % just to inform
 \newcommand{\info}[1]{\todo[color=lime!80, bordercolor=lightgray]{\textit{#1}}}
 % mark missing reference
-\newcommand{\addref}[1]{\todo[color=cyan, bordercolor=lightgray]{\textit{Add Ref:} #1}}
+\newcommand{\addref}[1]{\todo[color=cyan, bordercolor=lightgray, noinline]{\textit{Add Ref:} #1}}
 % highlight text and add note
 \usepackage{soul}
-\newcommand{\replace}[2]{\texthl{#1}\todo[color=yellow, bordercolor=lightgray]{\textit{Replace by:} #2}}
+\newcommand{\replace}[2]{\texthl{#1}\xspace\todo[color=yellow, bordercolor=lightgray, noinline]{\textit{Replace by:} #2}}
 
 % add the following lines to your private config if desired:
 % \presetkeys{todonotes}{disable}{}      to disable todonotes
