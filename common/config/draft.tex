@@ -2,17 +2,26 @@
 
 % To-do notes
 \usepackage[colorinlistoftodos]{todonotes}
-% Trying to get a link pointing back to the list of todos for every todo item
-% \makeatletter
-%   \renewcommand{\listoftodos}[1][\@todonotes@todolistname]{\@ifundefined{chapter}{\protect{\hypertarget{todonoteslist}{\section*{#1}}}}{\protect{\hypertarget{todonoteslist}{\chapter*{#1}}}} \@starttoc{tdo}}
-% \makeatother
-% \usepackage{letltxmacro}
-% \LetLtxMacro{\temptodo}{\todo}
-% \newcommand{\td}[2][]{\temptodo[#1]{#2 \hfill \hyperlink{todonoteslist}{$\uparrow$} }}
-
+% Modified listoftodos and todo commands to include a link pointing back to the
+% list of todos for every todo item
+\makeatletter
+  \renewcommand{\listoftodos}[1][\@todonotes@todolistname]{%
+    \@ifundefined{chapter}{%
+      \protect{\hypertarget{todonoteslist}{\section*{#1}}}}
+    {%
+      \protect{\hypertarget{todonoteslist}{\chapter*{#1}}}
+    }%
+    \@starttoc{tdo}%
+  }
+\makeatother
+\LetLtxMacro{\temptodo}{\todo}
+\renewcommand{\todo}[2][]{%
+  \temptodo[caption={#2}, bordercolor=lightgray, #1]{#2 \hfill \hyperlink{todonoteslist}{\ensuremath{\uparrow}}}%
+}
 % predefined todonote commands
+% important todo, bold and red
 \newcommand{\important}[1]{\todo[color=red, bordercolor=lightgray]{\textbf{#1}}}
-% just to inform
+% just to inform, lime and italic
 \newcommand{\info}[1]{\todo[color=lime!80, bordercolor=lightgray]{\textit{#1}}}
 % mark missing reference
 \newcommand{\addref}[1]{\todo[color=cyan, bordercolor=lightgray, noinline]{\textit{Add Ref:} #1}}
