@@ -22,7 +22,7 @@ def create_file_list(cwd):
         matched_files.remove(f)
     # create tuple [root, filename]
     for f in matched_files:
-      tex_files.append([root, f])
+      tex_files.append([root, unicode(f)])
   return tex_files
 
 if __name__ == "__main__":
@@ -38,7 +38,11 @@ if __name__ == "__main__":
   files = create_file_list(cwd)
   # get wordcount for all files in /private/content/; exceptions specified in file_exclude_list
   for r,f in files:
-    n = int(pexpect.run('/usr/texbin/texcount -sum=1,1,1,0,0,1,16 -brief -1 -utf8 '+r+'/'+f))
+    name = os.path.join(r,f)
+    try:
+      n = int(pexpect.run('/usr/texbin/texcount -sum=1,1,1,0,0,1,16 -brief -1 -utf8 "'+name+'"'))
+    except ValueError:
+      n = 0
     n_total += n
     if not args.silent:
       print f, n
