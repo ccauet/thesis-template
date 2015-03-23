@@ -4,7 +4,7 @@ LATEX = lualatex
 
 FIGEXT = .pdf
 MAINEXT= .pdf
-BUILDCOMMAND=rm -f $(MAIN).aux && $(LATEX) $(MAIN) && biber $(MAIN) && $(LATEX) $(MAIN) && $(LATEX) $(MAIN)
+BUILDCOMMAND=rm -f $(MAIN).aux && common/scripts/prettify_all.py && $(LATEX) $(MAIN) && biber $(MAIN) && $(LATEX) $(MAIN) && $(LATEX) $(MAIN)
 
 
 # list of all source files

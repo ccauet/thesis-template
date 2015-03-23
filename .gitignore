@@ -13,3 +13,4 @@ private
 *.synctex.gz
 *.toc
 *.tdo
+*.pyc

@@ -16,6 +16,13 @@ import fileinput, re, sys, imp, os
 def prettify_file(filename, dictfile):
   replace = imp.load_source('replace_dict', dictfile)
 
+  first_line = ""
+  with open(filename, 'r') as f:
+    first_line = f.readline()
+  if "tikzpicture" not in first_line:
+    print "File " + filename + " not a Tikz plot."
+    return
+
   for l in fileinput.input(filename, inplace=True):
     line = l
     for regex, subst in replace.replace_dict.iteritems():
