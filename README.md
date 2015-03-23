@@ -45,14 +45,15 @@ Todos can be defined with the following macros:
 ```
 
 All todos can be disabled by adding 
-
-```\presetkeys{todonotes}{disable}{}```
-
+```
+\presetkeys{todonotes}{disable}{}
+```
 to the private config files.
 
-To set inline todos by default:
-
-```\presetkeys{todonotes}{inline}{}```
+To make todos inline by default:
+```
+\presetkeys{todonotes}{inline}{}
+```
 
 ## Scripts
 
