@@ -61,10 +61,10 @@ To make todos inline by default:
 Create word count for all files in [private/content/](/private/content) and write log file including timestamp to [private/](/private/).
 _Dependencies_: [texcount](http://app.uio.no/ifi/texcount/) and the python modules: os, [pexpect](https://pexpect.readthedocs.org/en/latest/), fnmatch, datetime, [pytz](http://pytz.sourceforge.net)
 
-***common/scripts/prettify_pgfplots.py***
+***common/scripts/prettify_pgfplots.py***   
 Utility to "prettify" tikz-based plots from ROOT. Based on a python dictionary with regexps (if not specified, this is ```common/scripts/prettify_dictionary.py```) patterns will be replaced by proper TeX code (e.g. broken particle names by proper symbols).
 _Dependencies_: Python modules: fileinput, re, sys, imp, os
 
-***common/scripts/prettify_all.py***
+***common/scripts/prettify_all.py***   
 Prettify all tikz-based plots. Will be run via make.
 _Dependencies_: Python modules: os, [pexpect](https://pexpect.readthedocs.org/en/latest/), fnmatch, datetime, [pytz](http://pytz.sourceforge.net)
