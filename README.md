@@ -42,6 +42,7 @@ Todos can be defined with the following macros:
 \info{A rather informational todo note.}
 \addref{Note for a missing reference.}
 \replace{this}{by that}
+\redo{Recreate this ugly looking plot and make it nice!}
 ```
 
 All todos can be disabled by adding 
