@@ -8,7 +8,7 @@ BUILDCOMMAND=rm -f $(MAIN).aux && common/scripts/prettify_all.py && $(LATEX) $(L
 
 
 # list of all source files
-TEXSOURCES = $(wildcard *.tex) $(wildcard *.bib)
+TEXSOURCES = $(shell find common -type f -name "*.tex") $(shell find -L private -type f -name "*.tex") $(shell find common -type f -name "*.bib") $(shell find -L private -type f -name "*.bib")
 FIGSOURCES = $(wildcard figs/*$(FIGEXT))
 SOURCES    = $(TEXSOURCES) $(FIGSOURCES)
 
