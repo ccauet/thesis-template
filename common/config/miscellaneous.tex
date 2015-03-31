@@ -3,6 +3,7 @@
 % command manipulation
 \usepackage{etoolbox}
 \usepackage{xpatch}
+\usepackage{ifthen}
 
 % Lists
 \usepackage{enumerate}
@@ -24,3 +25,8 @@
   macros=true,
   xspace=true
 }
+
+% Rapid mode (i.e. tikz with externalize and todonotes switched off) per default
+% off
+\newboolean{rapidmode}
+\setboolean{rapidmode}{false}

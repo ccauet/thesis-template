@@ -66,3 +66,8 @@ end#1\endcsname
 \patchBothAmsMathEnvironmentsForLineno{gather}%
 \patchBothAmsMathEnvironmentsForLineno{multline}%
 }
+
+% Disable Todonotes in rapid mode (not compatible with Tikz externalize)
+\ifthenelse{\boolean{rapidmode}}{
+  \presetkeys{todonotes}{disable}{}
+}{}

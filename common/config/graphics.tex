@@ -34,6 +34,10 @@
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
 
-% its possible to generates PDFs and then include them back, WIP
-% \usepgfplotslibrary{external}
-% \tikzexternalize
+% Allow Tikz externalize in rapid mode (this also requires todonotes to be
+% disabled)
+\ifthenelse{\boolean{rapidmode}}{
+  % its possible to generates PDFs and then include them back, WIP
+  \usepgfplotslibrary{external}
+  \tikzexternalize[prefix=tikzfigures/]
+}{}

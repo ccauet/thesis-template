@@ -32,6 +32,55 @@ Useful fonts can be found in [fonts/](/fonts/) using [git-annex](http://git-anne
 
 The directory [common/config/fonts/](/common/config/fonts/) contains sets of matching fonts that can be activated with a simple include in your own ```private/config/``` setup.
 
+## Rapid mode
+
+To speed up compilation, rapid mode can be enabled by defining rapidmode as true in the ```private/config/``` setup:
+
+```
+\setboolean{rapidmode}{true}
+```
+
+This currently has the following effects:
+
+1. Tikz externalize library is used to avoid unnecessary recompilation of Tikz figures
+2. Todonotes are disabled (not compatible with Tikz externalize)
+
+Other speed-up features might be added in the future.
+
+### Caveats
+
+Compilation with ```latexmk``` in SublimeText/LaTeXTools does not work with externalize as the ```-shell-escape``` option is not propagated to ```lualatex```. To fix this add the following to your LaTeXTools user settings:
+
+```
+{
+…
+	"builder_settings" : {	
+		// General settings:
+		// See README or third-party documentation
+		"program": "lualatex",
+		"command": ["latexmk", "-cd", "-e", "$pdflatex = '%E -shell-escape -interaction=nonstopmode -synctex=1 %S %O'", "-f", "-pdf"],
+
+		// (built-ins): true shows the log of each command in the output panel
+		"display_log" : false,	
+
+		// Platform-specific settings:
+		"osx" : {
+			// See README or third-party documentation
+		},
+
+		"windows" : {
+			// See README or third-party documentation
+
+		},
+
+		"linux" : {
+			// See README or third-party documentation
+		}
+	},
+…
+}
+```
+
 ## Todo notes
 
 Todos can be defined with the following macros:
