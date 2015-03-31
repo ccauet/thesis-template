@@ -67,7 +67,17 @@ end#1\endcsname
 \patchBothAmsMathEnvironmentsForLineno{multline}%
 }
 
-% Disable Todonotes in rapid mode (not compatible with Tikz externalize)
-\ifthenelse{\boolean{rapidmode}}{
+% Setup rapid mode
+\newboolean{rapidmode}
+\setboolean{rapidmode}{false}
+\newcommand{\rapidmode}{
   \presetkeys{todonotes}{disable}{}
-}{}
+  \usepgfplotslibrary{external}
+  \tikzexternalize[prefix=tikzfigures/]
+}
+\let\oldtikzsetnextfilename\tikzsetnextfilename
+\newcommand{\tikzsetnextfilename}[1]{
+  \ifthenelse{\boolean{rapidmode}}{
+    \oldtikzsetnextfilename{#1}
+  }{}
+}

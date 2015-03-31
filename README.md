@@ -37,7 +37,7 @@ The directory [common/config/fonts/](/common/config/fonts/) contains sets of mat
 To speed up compilation, rapid mode can be enabled by defining rapidmode as true in the ```private/config/``` setup:
 
 ```
-\setboolean{rapidmode}{true}
+\rapidmode
 ```
 
 This currently has the following effects:
