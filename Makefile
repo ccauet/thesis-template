@@ -1,10 +1,10 @@
 MAIN = main
 
 LATEX = lualatex
-
+LATEX_OPTS=-shell-escape
 FIGEXT = .pdf
 MAINEXT= .pdf
-BUILDCOMMAND=rm -f $(MAIN).aux && common/scripts/prettify_all.py && $(LATEX) $(MAIN) && biber $(MAIN) && $(LATEX) $(MAIN) && $(LATEX) $(MAIN)
+BUILDCOMMAND=rm -f $(MAIN).aux && common/scripts/prettify_all.py && $(LATEX) $(LATEX_OPTS) $(MAIN) && biber $(MAIN) && $(LATEX) $(LATEX_OPTS) $(MAIN) && $(LATEX) $(LATEX_OPTS) $(MAIN)
 
 
 # list of all source files
