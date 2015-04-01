@@ -47,7 +47,7 @@ This currently has the following effects:
 
 Other speed-up features might be added in the future.
 
-### Caveats
+### Caveats – rapid mode
 
 Compilation with ```latexmk``` in SublimeText/LaTeXTools does not work with externalize as the ```-shell-escape``` option is not propagated to ```lualatex```. To fix this add the following to your LaTeXTools user settings:
 

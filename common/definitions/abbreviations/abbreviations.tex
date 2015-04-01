@@ -9,6 +9,15 @@
   %\overbar{#1}
 }%
 
+%===============================================================================
+%% Shortcuts for convenient math symbol definition
+\newcommand{\newmathsymbol}[2]{
+  \newcommand{#1}{\ensuremath{#2}\xspace}
+}
+\newcommand{\renewmathsymbol}[2]{
+  \renewcommand{#1}{\ensuremath{#2}\xspace}
+}
+
 % language
 \input{common/definitions/abbreviations/language}
 % general
@@ -20,6 +29,8 @@
 \input{common/definitions/abbreviations/quarks}
 % leptons
 \input{common/definitions/abbreviations/leptons}
+% hadrons (not specfically mesons/baryons)
+\input{common/definitions/abbreviations/hadrons}
 % mesons
 \input{common/definitions/abbreviations/mesons}
 % baryons
