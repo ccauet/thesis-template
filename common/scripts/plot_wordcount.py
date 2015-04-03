@@ -23,23 +23,30 @@ if __name__ == "__main__":
   date_format = DateFormatter('%d.%m.%Y')
 
   dates = [datetime.datetime.strptime(timestamp[0][:-13], '%Y-%m-%dT%H:%M:%S') for timestamp in data]
-  words = [q[1] for q in data]
+  words = np.array([q[1] for q in data])
+  pages = words/400.
 
-  
+  fig, ax_left = plt.subplots()
+  ax_left.plot_date(dates, words, 'b-', xdate=True)
+  ax_left.set_ylabel('Word count')
 
-  fig, ax = plt.subplots()
-  ax.plot_date(dates, words, '-', xdate=True)
-  ax.set_ylabel('Word count')
+  ax_right = ax_left.twinx()
+  ax_right.set_ylabel('Approx. no. of pages', color='r')
+  ax_right.set_ylim(0, 120)
+  # ax_right.axhline(y=100, color='r')
+  ax_right.plot_date(dates, pages, 'r-', xdate=True)
+  for tl in ax_right.get_yticklabels():
+      tl.set_color('r')
 
-  # format the ticks
-  ax.xaxis.set_major_locator(locator)
-  ax.xaxis.set_minor_locator(locator)
-  ax.xaxis.set_major_formatter(date_format)
-  ax.autoscale_view()
+  # format the ticks on the x-axis
+  ax_left.xaxis.set_major_locator(locator)
+  ax_left.xaxis.set_minor_locator(locator)
+  ax_left.xaxis.set_major_formatter(date_format)
+  ax_left.autoscale_view()
 
-  ax.fmt_xdata = DateFormatter('%Y-%m-%dT%H:%M:%S')
-  # ax.fmt_ydata = words
-  ax.grid(True)
+  ax_left.fmt_xdata = DateFormatter('%Y-%m-%dT%H:%M:%S')
+  ax_left.fmt_ydata = words
+  ax_left.grid(True)
 
   fig.autofmt_xdate()
   # plt.show()
