@@ -12,6 +12,7 @@ import datetime
 if __name__ == "__main__":
   parser = argparse.ArgumentParser() #
   parser.add_argument('-f', '--file', dest='inputfile', help='input file', required=True)
+  parser.add_argument('-o', '--output', dest='outfile', help='output file', default="wordcount.pdf")
   args = parser.parse_args()
 
   data = np.genfromtxt(args.inputfile, dtype=None)
@@ -50,4 +51,4 @@ if __name__ == "__main__":
 
   fig.autofmt_xdate()
   # plt.show()
-  plt.savefig("wordcount.pdf")
+  plt.savefig(args.outfile)
