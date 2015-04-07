@@ -19,7 +19,7 @@ OUTPUT = $(MAIN)$(MAINEXT)
 # prescription how to make output (your favorite commands to process latex)
 # do latex twice to make sure that all cross-references are updated 
 $(OUTPUT): $(SOURCES) Makefile
-	$(BUILDCOMMAND) || $(LATEX) $(MAIN)
+	$(BUILDCOMMAND) || ( $(LATEX) $(MAIN) && biber $(MAIN) )
 
 # just so we can say "make all" without knowing the output name
 all: $(OUTPUT)
