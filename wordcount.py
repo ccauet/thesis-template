@@ -40,7 +40,7 @@ if __name__ == "__main__":
   for r,f in files:
     name = os.path.join(r,f)
     try:
-      n = int(pexpect.run('/usr/texbin/texcount -sum=1,1,1,0,0,1,16 -brief -1 -utf8 "'+name+'"'))
+      n = int(pexpect.run('/usr/texbin/texcount -sum=1,1,1,0,0,1,32 -brief -1 -utf8 "'+name+'"'))
     except ValueError:
       n = 0
     n_total += n
