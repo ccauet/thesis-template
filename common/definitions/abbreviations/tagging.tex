@@ -1,13 +1,23 @@
 %!TEX root = ../../../main.tex
 
-\newcommand{\tagdecision}     {\ensuremath{d}\xspace}
-\newcommand{\mistagestimate}  {\ensuremath{\eta}}
-\newcommand{\mistag}          {\ensuremath{\omega}}
+%% Basic tagging quantities
+\newmathsymbol{\tagdecision}     {d}
+\newmathsymbol{\mistagestimate}  {\eta}
+\newmathsymbol{\mistag}          {\omega}
 
-\newcommand{\NRtagged}        {\ensuremath{N_R}\xspace}
-\newcommand{\NWtagged}        {\ensuremath{N_W}\xspace}
-\newcommand{\NUtagged}        {\ensuremath{N_U}\xspace}
+%% Tagging performance
+\newmathsymbol{\Ntagged}         {N_\text{tag}}
+\newmathsymbol{\NRtagged}        {N_\text{R}}
+\newmathsymbol{\NWtagged}        {N_\text{W}}
+\newmathsymbol{\NUtagged}        {N_\text{U}}
 
-\newcommand{\tageff}          {\ensuremath{\epsilon_\text{tag}}\xspace}
-\newcommand{\efftageff}       {\ensuremath{\epsilon_\text{eff}}\xspace}
-\newcommand{\tagdilution}     {\ensuremath{D}\xspace}
+\newmathsymbol{\tageff}          {\epsilon_\text{tag}}
+\newmathsymbol{\efftageff}       {\epsilon_\text{eff}}
+\newmathsymbol{\tagdilution}     {D}
+\newmathsymbol{\tagdilutionlg}   {(1-2\mistag)}
+
+%% Tagging calibration
+\newmathsymbol{\omofeta}         {\mistag(\mistagestimate)}
+\newmathsymbol{\pzero}           {p_0}
+\newmathsymbol{\pone}            {p_1}
+\newmathsymbol{\avgmistagestimate}{\langle\mistagestimate\rangle}
