@@ -89,6 +89,7 @@ Todos can be defined with the following macros:
 \todo{Do something}
 \important{Do something ASAP!}
 \info{A rather informational todo note.}
+\missing{Add section about interesting study}
 \addref{Note for a missing reference.}
 \replace{this}{by that}
 \redo{Recreate this ugly looking plot and make it nice!}
