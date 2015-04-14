@@ -12,6 +12,7 @@ private
 *.out
 *.run.xml
 *.synctex.gz
+*.synctex.gz(busy)
 *.toc
 *.tdo
 *.pyc
