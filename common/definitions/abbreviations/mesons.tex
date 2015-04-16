@@ -102,10 +102,18 @@
 \newmathsymbol{\Bsd}         {\B^0_{(\squark)}}
 \newmathsymbol{\Bsdbar}      {\Bbar^0_{(\squark)}}
 
-% text
+%% Mesons in text
 % b meson
 \newcommand{\bmeson}{$\bquark$ meson\xspace}
 \newcommand{\bmesons}{$\bquark$ mesons\xspace}
 % B meson
 \newcommand{\Bmeson}{$\B$ meson\xspace}
 \newcommand{\Bmesons}{$\B$ mesons\xspace}
+
+%% Mesons to be used in headings with bold, sans, italic math font (makes sure 
+%  all characters use the proper font)
+\newmathsymbol{\Bdbfsf}      {\mathbfsfit{\B^{\mathsf{0}}}}
+
+%% Mesons with hyperref-compatible text alternative
+\newcommand{\BdHyperref}     {\texorpdfstring{\Bd}{B0}\xspace}
+
