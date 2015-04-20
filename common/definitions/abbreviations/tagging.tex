@@ -18,10 +18,22 @@
 \newmathsymbol{\tagdilutionlg}   {(1-2\mistag)}
 
 %% Tagging calibration
-\newmathsymbol{\omofeta}         {\mistag(\mistagestimate)}
-\newmathsymbol{\pzero}           {p_0}
-\newmathsymbol{\pone}            {p_1}
+\newcommand{\p}[2]                {p_{#1}^{#2}}
+\newcommand{\deltap}[1]           {\Delta p_{#1}}
+\newcommand{\omegaofeta}[1]       {\mistag^{#1}(\mistagestimate)}
+\newmathsymbol{\omofeta}          {\omegaofeta{}}
+\newmathsymbol{\pzero}            {\p{0}{}}
+\newmathsymbol{\deltapzero}       {\deltap{0}}
+\newmathsymbol{\pone}             {\p{1}{}}
+\newmathsymbol{\deltapone}        {\deltap{1}}
 \newmathsymbol{\avgmistagestimate}{\langle\mistagestimate\rangle}
+
+\newmathsymbol{\omofetaBd}        {\omegaofeta{\Bd}}
+\newmathsymbol{\omofetaBdbar}     {\omegaofeta{\Bdbar}}
+\newmathsymbol{\pzeroBd}          {\p{0}{\Bd}}
+\newmathsymbol{\pzeroBdbar}       {\p{0}{\Bdbar}}
+\newmathsymbol{\poneBd}           {\p{1}{\Bd}}
+\newmathsymbol{\poneBdbar}        {\p{1}{\Bdbar}}
 
 %% Basic, performance and calibration quantities - OS
 \newmathsymbol{\tagdecisionos}{\tagdecision^\text{OS}}
