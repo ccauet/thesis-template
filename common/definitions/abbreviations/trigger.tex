@@ -1,0 +1,29 @@
+%!TEX root = ../../../main.tex
+
+% general
+\newcommand{\HLTOne}{HLT1\xspace}
+\newcommand{\HLTTwo}{HLT2\xspace}
+
+\SaveVerb{tmp_And}= && =
+\newcommand{\VerbAnd}{\UseVerb{tmp_And}\xspace}
+\SaveVerb{tmp_Or}= || =
+\newcommand{\VerbOr}{\UseVerb{tmp_Or}\xspace}
+
+% trigger lines
+% L0
+\SaveVerb{tmp_lzeromuon}=L0Muon=
+\newcommand{\LZeroMuon}{\UseVerb{tmp_lzeromuon}\xspace}
+\SaveVerb{tmp_lzerodimuondec}=L0DiMuon=
+\newcommand{\LZeroDiMuon}{\UseVerb{tmp_lzerodimuondec}\xspace}
+
+% HLT1
+\SaveVerb{tmp_hltonedimuonhighmass}=Hlt1DiMuonHighMass=
+\newcommand{\HLTOneDiMuonHighMass}{\UseVerb{tmp_hltonedimuonhighmass}\xspace}
+\SaveVerb{tmp_hltonetrackmuon}=Hlt1TrackMuon=
+\newcommand{\HLTOneTrackMuon}{\UseVerb{tmp_hltonetrackmuon}\xspace}
+
+% HLT2
+\SaveVerb{tmp_hlttwodumuonjpsi}=Hlt2DiMuonJPsi=
+\newcommand{\HLTTwoDiMuonJpsi}{\UseVerb{tmp_hlttwodumuonjpsi}\xspace}
+\SaveVerb{tmp_hlttwodimuondetachedjpsi}=Hlt2DiMuonDetachedJPsi=
+\newcommand{\HLTTwoDiMuonDetachedJpsi}{\UseVerb{tmp_hlttwodimuondetachedjpsi}\xspace}
