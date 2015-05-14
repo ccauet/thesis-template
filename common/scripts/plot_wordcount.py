@@ -21,7 +21,8 @@ if __name__ == "__main__":
   years = YearLocator()
   months = MonthLocator()
   days = DayLocator() 
-  date_format = DateFormatter('%d.%m.%Y')
+  major_format = DateFormatter('%d.%m.%Y')
+  minor_format = DateFormatter('%d.')
 
   dates = [datetime.datetime.strptime(timestamp[0][:-13], '%Y-%m-%dT%H:%M:%S') for timestamp in data]
   words = np.array([q[1] for q in data])
@@ -33,8 +34,8 @@ if __name__ == "__main__":
 
   ax_right = ax_left.twinx()
   ax_right.set_ylabel('Approx. no. of pages', color='r')
-  ax_right.set_ylim(0, 120)
-  # ax_right.axhline(y=100, color='r')
+  ax_right.set_ylim(0, 125)
+  ax_right.yaxis.set_ticks(range(0,125,10))
   ax_right.plot_date(dates, pages, 'r-', xdate=True)
   for tl in ax_right.get_yticklabels():
       tl.set_color('r')
@@ -42,13 +43,17 @@ if __name__ == "__main__":
   # format the ticks on the x-axis
   ax_left.xaxis.set_major_locator(locator)
   ax_left.xaxis.set_minor_locator(locator)
-  ax_left.xaxis.set_major_formatter(date_format)
+  ax_left.xaxis.set_major_formatter(major_format)
+  # ax_left.xaxis.set_minor_formatter(minor_format)
   ax_left.autoscale_view()
 
   ax_left.fmt_xdata = DateFormatter('%Y-%m-%dT%H:%M:%S')
   ax_left.fmt_ydata = words
   ax_left.grid(True)
-
+  
+  # set horizontal line at 100 pages limit
+  ax_right.axhline(y=100, color='r', linestyle='--', linewidth=0.3)
+  
   fig.autofmt_xdate()
   # plt.show()
   plt.savefig(args.outfile)
