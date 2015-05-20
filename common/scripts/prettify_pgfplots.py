@@ -19,7 +19,7 @@ def prettify_file(filename, dictfile):
   first_line = ""
   with open(filename, 'r') as f:
     first_line = f.readline()
-  if "tikzpicture" not in first_line:
+  if "tikzpicture" not in first_line and "\pgf" not in first_line:
     print "File " + filename + " not a Tikz plot."
     return
 

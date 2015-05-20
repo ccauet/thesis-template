@@ -3,6 +3,8 @@ import re
 replace_dict = {
   re.escape("\it{K}_{\kern[-0.3]{S}}^{0}") : "\KS",
   re.escape("\it{J/\kern[-0.3]{\psi}}") : "\jpsi",
+  re.escape("\it{B}^{0}\\rightarrow \it{J/\kern[-0.3]{\psi} K}^{\\font[122]{*}0}") : "\BdToJpsiKstarz",
+  #re.escape("\it{J/\kern[-0.3]{\psi} K}^{\\font[122]{*}0}") : "\jpsi\Kstarz",
   re.escape("\it{t}") : "\dtime",
   "{Candidates / (.*)};" : "{$\\\\text{Candidates} / \\1$};",
   re.escape("$Candidates") : "$\\\\text{Candidates}",
@@ -19,4 +21,7 @@ replace_dict = {
   re.escape("scale=2.58211") : "scale=2.38229",
   re.escape("scale=2.33383") : "scale=2.18377",
   re.escape("scale=2.33383") : "scale=1.98647",
+  #"\\$\\\\scale\\[([0-9.]+)\\]{\\\\splitline{(.*)}{(.*)}}\\$" : "\\\\scalebox{\\1}{{$\\2$}{$\\3$}}",
+  "\\$\\\\scale\\[([0-9.]+)\\]{(.*)}\\$" : "\\\\scalebox{\\1}{$\\2$}",
+  #"\\$\\\\splitline{(.*)}{(.*)}\\$" : "{$\\1$}{$\\2$}",
 }
