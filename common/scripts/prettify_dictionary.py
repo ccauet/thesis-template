@@ -12,5 +12,9 @@ replace_dict = {
   "([0-9.]+) \\\\si{\\\\MeVcc}" : "\SI{\\1}{\MeVcc}",
   re.escape("{DD}") : "{\\\\text{\catdd}}",
   re.escape("{LL}") : "{\\\\text{\catll}}",
+  re.escape("{_dd}") : "{\\\\text{\catdd}}",
+  re.escape("{_ll}") : "{\\\\text{\catll}}",
+  re.escape("\_dd") : "\catdd",
+  re.escape("\_ll") : "\catll",
   re.escape("(ps)") : "(\si{\pico\second})",
 }
