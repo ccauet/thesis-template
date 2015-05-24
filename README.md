@@ -7,18 +7,28 @@ This thesis template is based on a private/common layout, i.e. large parts are s
 
 ```
 .
+└── content
+    └── content.tex
+```
+
+In case you want to include private configurations, definitions, a title page, or an appendix, the minimal template can be extended.
+
+```
+.
 ├── config
 │   └── config.tex
 ├── content
+│   ├── appendices
+│   │   └── appendices.tex
 │   ├── content.tex
 │   └── titlepage
-│       └── titlepage.tex
+│       └── titlepage.tex
 └── definitions
     ├── abbreviations
     │   └── abbreviations.tex
     ├── acronyms
     │   └── acronyms.tex
-    └── counter.tex
+    └── definitions.tex
 ```
 
 To make use of ```%!TEX root = ..``` in your editor, create a second symlink called ```common``` in your private file hierarchy.
@@ -122,3 +132,17 @@ _Dependencies_: Python modules: fileinput, re, sys, imp, os
 ***[common/scripts/prettify_all.py](common/scripts/prettify_all.py)***   
 Prettify all tikz-based plots. Will be run via make.
 _Dependencies_: Python modules: os, [pexpect](https://pexpect.readthedocs.org/en/latest/), fnmatch, datetime, [pytz](http://pytz.sourceforge.net)
+
+## Special LHCb content
+
+Special [LHCb](http://lhcb-public.web.cern.ch/lhcb-public/) content can be found in ```definitions/acronyms/lhcb.tex``` and ```references/lhcb.bib```. The acronyms can be added to the private configuration by adding the line:
+
+```
+\input{common/definitions/acronyms/lhcb}
+```
+
+or for the LHCb-centric bibliography:
+
+```
+\addbibresource{common/references/lhcb.bib}
+```
