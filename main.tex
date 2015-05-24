@@ -33,5 +33,10 @@
 
 \backmatter
   \printbibliography
+  \IfFileExists{private/content/appendices/appendices}{
+    \cleardoublepage
+    \appendix
+    \include{private/content/appendices/appendices}
+  }{}
 
 \end{document}
