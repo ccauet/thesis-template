@@ -9,7 +9,7 @@ import pytz
 from pytz import timezone
 
 file_exclude_list = ['tests.tex', 'titlepage.tex']
-dirs_exclude_list = ['figures']
+dirs_exclude_list = ['figures', 'tikz']
 file_to_write = 'private/wordcount.txt'
 
 def create_file_list(cwd):
@@ -33,7 +33,11 @@ def create_file_list(cwd):
 if __name__ == "__main__":
   parser = argparse.ArgumentParser() #
   parser.add_argument('-s', '--silent', dest='silent', action='store_true', help='silent mode: suppress all output')
+  parser.add_argument('-e', '--exclude-appendix', dest='excl_appendix', action='store_true', help='exclude appendix from wordcount')
   args = parser.parse_args()
+
+  if args.excl_appendix:
+    dirs_exclude_list.append('appendices')
 
   #cwd = os.getcwdu()
   cwd = os.path.dirname(os.path.realpath(__file__))
