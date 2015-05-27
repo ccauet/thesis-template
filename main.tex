@@ -3,6 +3,7 @@
   a4paper,
   BCOR=15mm,
   bibliography=totoc,
+  numbers=noenddot,
   headings=optiontotocandhead,
   twoside
 ]{scrbook}
@@ -31,19 +32,14 @@
 \mainmatter
   \InputIfFileExists{private/content/content}{}{}
 
+\IfFileExists{private/content/appendices/appendices}{
+  \noappendicestocpagenum
+  \begin{appendices}
+    \input{private/content/appendices/appendices}
+  \end{appendices}
+}{}
+
 \backmatter
   \printbibliography
-  \IfFileExists{private/content/appendices/appendices}{
-    \cleardoublepage
-    % \clearpage
-    \appendix
-    \appendixpage
-    \addappheadtotoc
-    % \addcontentsline{toc}{chapter}{Appendix}
-    \include{private/content/appendices/appendices}
-    % \begin{appendices}
-    %   \include{private/content/appendices/appendices}
-    % \end{appendices}
-  }{}
 
 \end{document}
