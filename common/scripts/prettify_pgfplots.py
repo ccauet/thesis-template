@@ -48,6 +48,10 @@ if __name__ == "__main__":
   else:
     path = os.path.abspath(os.path.dirname(sys.argv[0]))
     path_private = os.path.join(os.path.dirname(os.path.dirname(path)), os.path.join("private", "scripts"))
-    dictfiles = [os.path.join(path, "prettify_dictionary.py"), os.path.join(path_private, "prettify_dictionary.py")]
+    dictfiles = []
+    if os.path.exists(os.path.join(path, "prettify_dictionary.py")):
+      dictfiles.append(os.path.join(path, "prettify_dictionary.py"))
+    if os.path.exists(os.path.join(path_private, "prettify_dictionary.py")):
+      dictfiles.append(os.path.join(path_private, "prettify_dictionary.py"))  
 
   prettify_file(plotfile, dictfiles)
