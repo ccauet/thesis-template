@@ -35,8 +35,15 @@
   \printbibliography
   \IfFileExists{private/content/appendices/appendices}{
     \cleardoublepage
+    % \clearpage
     \appendix
+    \appendixpage
+    \addappheadtotoc
+    % \addcontentsline{toc}{chapter}{Appendix}
     \include{private/content/appendices/appendices}
+    % \begin{appendices}
+    %   \include{private/content/appendices/appendices}
+    % \end{appendices}
   }{}
 
 \end{document}
