@@ -35,6 +35,10 @@
 \IfFileExists{private/content/appendices/appendices}{
   \noappendicestocpagenum
   \begin{appendices}
+    \crefalias{chapter}{appch}
+    \crefalias{section}{appsec}
+    \crefalias{subsection}{appsubsec}
+    \crefalias{subsubsection}{appsubsubsec}
     \input{private/content/appendices/appendices}
   \end{appendices}
 }{}
