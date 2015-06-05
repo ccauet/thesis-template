@@ -12,7 +12,7 @@
 % suppressing specific entry fields
 \AtEveryBibitem{%
   \clearname{translator}%
-  \clearlist{publisher}%
+  \clearname{comments}%
   \clearfield{pagetotal}%
 }
 % suppressing "In:" 
@@ -20,9 +20,11 @@
 % et al. in italics
 \DefineBibliographyStrings{english}{andothers=\textit{et~al\adddot}}
 % title in italic
-\DeclareFieldFormat[article,book,thesis]{title}{\textit{#1}}
+\DeclareFieldFormat[article,book,thesis,online,unpublished]{title}{\textit{#1}}
 % volume in bold face
-\DeclareFieldFormat[article,book,thesis]{volume}{\textbf{#1}}
+\DeclareFieldFormat[article,book,thesis,online,unpublished]{volume}{\textbf{#1}}
+% journal in roman face
+\DeclareFieldFormat[article,book,thesis,online,unpublished]{journaltitle}{#1}
 % comma as delimiter
 \renewcommand{\newunitpunct}{\addcomma\space}
 
