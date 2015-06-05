@@ -3,9 +3,26 @@
 % BibLaTeX
 \usepackage[backend=biber,%
             citestyle=numeric-comp,%
+            bibstyle=draft,% numeric
             sorting=none,%
+            firstinits=true,%
            ]{biblatex}
-\addbibresource{common/references/bibliography.bib}
+\addglobalbib{common/references/bibliography.bib}
+
+% suppressing specific entry fields
+\AtEveryBibitem{%
+  \clearname{translator}%
+  \clearlist{publisher}%
+  \clearfield{pagetotal}%
+}
+% suppressing "In:" 
+\renewbibmacro{in:}{}
+% et al. in italics
+\DefineBibliographyStrings{english}{andothers=\textit{et~al\adddot}}
+% title in italic
+\DeclareFieldFormat[article,book,thesis]{title}{\textit{#1}}
+% comma as delimiter
+\renewcommand{\newunitpunct}{\addcomma\space}
 
 \usepackage{hyperref}
 \hypersetup{
