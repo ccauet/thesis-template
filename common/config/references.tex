@@ -3,7 +3,7 @@
 % BibLaTeX
 \usepackage[backend=biber,%
             citestyle=numeric-comp,%
-            bibstyle=draft,% numeric
+            %bibstyle=draft,% numeric
             sorting=none,%
             firstinits=true,%
            ]{biblatex}
@@ -21,6 +21,8 @@
 \DefineBibliographyStrings{english}{andothers=\textit{et~al\adddot}}
 % title in italic
 \DeclareFieldFormat[article,book,thesis]{title}{\textit{#1}}
+% volume in bold face
+\DeclareFieldFormat[article,book,thesis]{volume}{\textbf{#1}}
 % comma as delimiter
 \renewcommand{\newunitpunct}{\addcomma\space}
 
