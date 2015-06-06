@@ -33,7 +33,8 @@
 
 %% chi2/ndf
 \newmathsymbol{\chisq}{\chi^2}
-\newmathsymbol{\chisqndf}{\chisq/\ndf}
+\newcommand{\redchisq}[1]{\ensuremath{\chisq_{#1}/\ndf}\xspace}
+\newmathsymbol{\chisqndf}{\redchisq{}}
 
 %% Probability Density Function
 \newcommand{\Prob}[2]{\ensuremath{\mathcal{P}_{#1}^{#2}}}
