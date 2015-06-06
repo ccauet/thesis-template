@@ -21,26 +21,52 @@
 % et al. in italics
 \DefineBibliographyStrings{english}{andothers=\textit{et~al\adddot}}
 % title in italic
-\DeclareFieldFormat[article,book,thesis,online,unpublished]{title}{\textit{#1}}
+\DeclareFieldFormat[article,thesis,book,online,unpublished]{title}{\textit{#1}}
 % volume in bold face
-\DeclareFieldFormat[article,book,thesis,online,unpublished]{volume}{\textbf{#1}}
+\DeclareFieldFormat[article,thesis,book,online,unpublished]{volume}{\textbf{#1}}
 % journal in roman face
-\DeclareFieldFormat[article,book,thesis,online,unpublished]{journaltitle}{#1}
+\DeclareFieldFormat[article,thesis,book,online,unpublished]{journaltitle}{#1}
 % space before pages field
 \renewcommand*{\bibpagespunct}{\addspace}
-% no prefix for pages field
-\DeclareFieldFormat[article,book,thesis,online,unpublished]{pages}{#1}
+% no "p." prefix for pages field
+\DeclareFieldFormat{pages}{#1}
+% remove "DOI:" prefix
+\DeclareFieldFormat{doi}{%
+  \ifhyperref
+    {\href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
+    {\nolinkurl{#1}}}
+% remove "arxiv:" prefix
+\DeclareFieldFormat{eprint:arxiv}{%
+  \ifhyperref
+    {\href{http://arxiv.org/abs/#1}{%
+       \nolinkurl{arXiv:#1}%
+       \iffieldundef{eprintclass}
+         {}
+         {\addspace\texttt{\mkbibbrackets{\thefield{eprintclass}}}}}}
+    {\nolinkurl{#1}
+     \iffieldundef{eprintclass}
+       {}
+       {\addspace\texttt{\mkbibbrackets{\thefield{eprintclass}}}}}}
+% remove "URL:" prefix
+\DeclareFieldFormat{url}{\url{#1}}
 % comma as delimiter
 \renewcommand{\newunitpunct}{\addcomma\space}
 
 \usepackage{hyperref}
+% encoding
 \hypersetup{
     unicode=true,
     pdfencoding=auto,
-    linktoc=all,
     }
-
-% \usepackage[german]{varioref}
+% links
+\hypersetup{
+    linktocpage=true,
+    }
+% color
+\hypersetup{
+    colorlinks=true,
+    allcolors=blue,
+    }
 
 \usepackage{cleveref}
   \crefname{chapter}{Ch.\@}{Chs.\@}
