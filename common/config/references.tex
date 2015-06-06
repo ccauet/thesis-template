@@ -13,6 +13,7 @@
 \AtEveryBibitem{%
   \clearname{translator}%
   \clearname{comments}%
+  \clearfield{month}%
   \clearfield{pagetotal}%
 }
 % suppressing "In:" 
@@ -25,6 +26,10 @@
 \DeclareFieldFormat[article,book,thesis,online,unpublished]{volume}{\textbf{#1}}
 % journal in roman face
 \DeclareFieldFormat[article,book,thesis,online,unpublished]{journaltitle}{#1}
+% space before pages field
+\renewcommand*{\bibpagespunct}{\addspace}
+% no prefix for pages field
+\DeclareFieldFormat[article,book,thesis,online,unpublished]{pages}{#1}
 % comma as delimiter
 \renewcommand{\newunitpunct}{\addcomma\space}
 
