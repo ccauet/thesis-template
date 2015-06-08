@@ -9,21 +9,41 @@
 \SaveVerb{tmp_Or}= || =
 \newcommand{\VerbOr}{\UseVerb{tmp_Or}\xspace}
 
-% trigger lines
-% L0
+%%% trigger lines
+%% L0
 \SaveVerb{tmp_lzeromuon}=L0Muon=
 \newcommand{\LZeroMuon}{\UseVerb{tmp_lzeromuon}\xspace}
 \SaveVerb{tmp_lzerodimuondec}=L0DiMuon=
 \newcommand{\LZeroDiMuon}{\UseVerb{tmp_lzerodimuondec}\xspace}
 
-% HLT1
+%% HLT1
+% with Hlt prefix
 \SaveVerb{tmp_hltonedimuonhighmass}=Hlt1DiMuonHighMass=
 \newcommand{\HLTOneDiMuonHighMass}{\UseVerb{tmp_hltonedimuonhighmass}\xspace}
 \SaveVerb{tmp_hltonetrackmuon}=Hlt1TrackMuon=
 \newcommand{\HLTOneTrackMuon}{\UseVerb{tmp_hltonetrackmuon}\xspace}
 
-% HLT2
+% without Hlt prefix
+\SaveVerb{tmp_dimuonhighmass}=DiMuonHighMass=
+\newcommand{\DiMuonHighMass}{\UseVerb{tmp_dimuonhighmass}\xspace}
+\SaveVerb{tmp_trackalllzero}=TrackAllL0=
+\newcommand{\TrackAllLZero}{\UseVerb{tmp_trackalllzero}\xspace}
+\SaveVerb{tmp_trackmuon}=TrackMuon=
+\newcommand{\TrackMuon}{\UseVerb{tmp_trackmuon}\xspace}
+
+%% HLT2
+% with Hlt prefix
 \SaveVerb{tmp_hlttwodumuonjpsi}=Hlt2DiMuonJPsi=
 \newcommand{\HLTTwoDiMuonJpsi}{\UseVerb{tmp_hlttwodumuonjpsi}\xspace}
 \SaveVerb{tmp_hlttwodimuondetachedjpsi}=Hlt2DiMuonDetachedJPsi=
 \newcommand{\HLTTwoDiMuonDetachedJpsi}{\UseVerb{tmp_hlttwodimuondetachedjpsi}\xspace}
+
+% without Hlt prefix
+\SaveVerb{tmp_dimuonjpsi}=DiMuonJPsi=
+\newcommand{\DiMuonJPsi}{\UseVerb{tmp_dimuonjpsi}\xspace}
+\SaveVerb{tmp_dimuonjpsihighpt}=DiMuonJPsiHighPT=
+\newcommand{\DiMuonJPsiHighPT}{\UseVerb{tmp_dimuonjpsihighpt}\xspace}
+\SaveVerb{tmp_dimuondetachedjpsi}=DiMuonDetachedJPsi=
+\newcommand{\DiMuonDetachedJPsi}{\UseVerb{tmp_dimuondetachedjpsi}\xspace}
+\SaveVerb{tmp_topomutwobodybbdt}=TopoMu2BodyBBDT=
+\newcommand{\TopoMuTwoBodyBBDT}{\UseVerb{tmp_topomutwobodybbdt}\xspace}
