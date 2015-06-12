@@ -23,5 +23,6 @@
 \newcommand{\order}[1]{\ensuremath{\mathcal{O}\left(#1\right)}}
 
 % real and imaginary part
-\renewcommand{\Re}{\ensuremath{\text{Re}}\xspace}
-\renewcommand{\Im}{\ensuremath{\text{Im}}\xspace}
+% see: http://tex.stackexchange.com/questions/239900/begindocument-breaks-redefinition-of-re
+\AtBeginDocument{\renewcommand{\Re}{\operatorname{Re}}}
+\AtBeginDocument{\renewcommand{\Im}{\operatorname{Im}}}
