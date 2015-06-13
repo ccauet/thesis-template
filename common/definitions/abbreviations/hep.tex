@@ -38,7 +38,7 @@
 
 %% Probability Density Function
 \newcommand{\Prob}[2]{\ensuremath{\mathcal{P}_{#1}^{#2}}}
-\newcommand{\ProbArg}[3]{\ensuremath{\Prob{#1}{#2}\left(#3\right)}}
+\newcommand{\ProbArg}[3]{\ensuremath{\Prob{#1}{#2}\kern-.2ex \left(#3\right)}}
 
 %% Normalisation
 \newcommand{\Norm}[2]{\ensuremath{\mathcal{N}_{#1}^{#2}}}
@@ -66,6 +66,14 @@
 \newmathsymbol{\DLLmupi}{\DLL_{\muon\pion}}
 \newmathsymbol{\DLLepi}{\DLL_{\electron\pion}}
 \newmathsymbol{\DLLlpi}{\DLL_{\lepton\pion}}
+
+%% NNPID variables
+\newmathsymbol{\ProbNN}{\Prob{\text{NN}}{}}
+\newmathsymbol{\ProbNNK}{\ProbArg{\text{NN}}{}{\kaon}}
+\newmathsymbol{\ProbNNpi}{\ProbArg{\text{NN}}{}{\pion}}
+\newmathsymbol{\ProbNNp}{\ProbArg{\text{NN}}{}{\proton}}
+\newmathsymbol{\ProbNNmu}{\ProbArg{\text{NN}}{}{\muon}}
+\newmathsymbol{\ProbNNe}{\ProbArg{\text{NN}}{}{\electron}}
 
 %% Efficiencies
 \newmathsymbol{\SigEff}{\varepsilon_{\Sig}}
