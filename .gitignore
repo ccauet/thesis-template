@@ -4,6 +4,7 @@ main.pdf
 private
 .DS_Store
 *.aux
+*.auxlock
 *.bbl
 *.bcf
 *.blg
