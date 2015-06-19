@@ -1,4 +1,4 @@
-find -E -L . -not -path "./trash/*" -regex ".*\.(aux|bbl|blg|dvi|tmp|out|fdb_latexmk|fls|ilg|ind|tdo|toc|bcf|run\.xml)" | while read file
+find -E -L . -not -path "./trash/*" -regex ".*\.(aux|auxlock|bbl|blg|dvi|tmp|out|fdb_latexmk|fls|ilg|ind|tdo|toc|bcf|run\.xml)" | while read file
 do 
   dir=$(dirname $file)
   echo "$file to trash/$dir"
