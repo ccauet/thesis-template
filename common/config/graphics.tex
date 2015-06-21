@@ -11,6 +11,7 @@
 \usetikzlibrary{circuits.logic.IEC,circuits.ee.IEC}
 \usetikzlibrary{decorations.pathmorphing}   % For Feynman Diagrams
 \usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
 \usetikzlibrary{fit}
 \usetikzlibrary{positioning}
 \usetikzlibrary{shadows}
@@ -22,6 +23,32 @@
 \usetikzlibrary{patterns,fadings}
 \usetikzlibrary{intersections}
 \usetikzlibrary{plotmarks}
+
+%% Based in https://github.com/fliptanedo/tikzfeynman.sty
+\tikzset{
+  % >=stealth', %% more traditional arrows, I don't like them
+    vector/.style={decorate, decoration={snake}, draw},
+    fermion/.style={postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow{>}}}},
+    fermionbar/.style={draw, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow{<}}}},
+    fermionnoarrow/.style={},
+    gluon/.style={decorate,
+        decoration={coil,amplitude=4pt, segment length=5pt}},
+    scalar/.style={dashed, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow{>}}}},
+    scalarbar/.style={dashed, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow{<}}}},
+    scalarnoarrow/.style={dashed,draw},
+%
+%%%   Special vectors (when you need to fine-tune wiggles)
+% provector/.style={decorate, decoration={snake,amplitude=2.5pt}, draw},
+% antivector/.style={decorate, decoration={snake,amplitude=-2.5pt}, draw},
+%     electron/.style={draw=black, postaction={decorate},
+%        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+% bigvector/.style={decorate, decoration={snake,amplitude=4pt}, draw},
+  vectorscalar/.style={loosely dotted,draw=black, postaction={decorate}},
+}
 
 %%%%%%%%%%%%%%%%
 \usepackage{pgfplots}
