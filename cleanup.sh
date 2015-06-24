@@ -11,3 +11,9 @@ find -E tikzfigures/ -type f -not -name "README.md" | while read file
 do
   rm $file
 done
+
+if [ -f "main.makefile" ]
+then
+  rm main.makefile
+fi
+

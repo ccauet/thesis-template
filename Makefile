@@ -5,8 +5,8 @@ LATEX_OPTS=--shell-escape --interaction=batchmode
 LATEX_PREFINAL_OPTS=--draftmode 
 FIGEXT = .pdf
 MAINEXT= .pdf
-BUILDCOMMAND=rm -f $(MAIN).aux && common/scripts/prettify_all.py && $(LATEX) $(LATEX_PREFINAL_OPTS) $(LATEX_OPTS) $(MAIN) && biber $(MAIN) && $(LATEX) $(LATEX_PREFINAL_OPTS) $(LATEX_OPTS) $(MAIN) && $(LATEX) $(LATEX_OPTS) $(MAIN)
-
+NUM_THREADS=8
+BUILDCOMMAND=rm -f $(MAIN).aux && common/scripts/prettify_all.py && $(LATEX) $(LATEX_PREFINAL_OPTS) $(LATEX_OPTS) $(MAIN) && if [ -f "main.makefile" ]; then make -j $(NUM_THREADS) -f main.makefile; fi && biber $(MAIN) && $(LATEX) $(LATEX_PREFINAL_OPTS) $(LATEX_OPTS) $(MAIN) && $(LATEX) $(LATEX_OPTS) $(MAIN)
 
 # list of all source files
 TEXSOURCES = $(shell find common -type f -name "*.tex") $(shell find -L private -type f -name "*.tex") $(shell find common -type f -name "*.bib") $(shell find -L private -type f -name "*.bib")

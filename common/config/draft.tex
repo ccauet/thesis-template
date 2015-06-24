@@ -75,7 +75,9 @@ end#1\endcsname
 \newcommand{\rapidmode}{
   \presetkeys{todonotes}{disable}{}
   \usepgfplotslibrary{external}
-  \tikzexternalize[prefix=tikzfigures/]
+  \tikzexternalize[mode=list and make, prefix=tikzfigures/]
+  \tikzset{external/system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}
+  }
 }
 \let\oldtikzsetnextfilename\tikzsetnextfilename
 \newcommand{\tikzsetnextfilename}[1]{
