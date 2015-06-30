@@ -30,6 +30,10 @@ clean:
 	./cleanup.sh
 	rm -f $(MAIN)$(MAINEXT) $(MAIN).ps
 
+# non-silent lualatex run for warnings etc.
+loud:
+	$(LATEX) $(MAIN)
+
 # prettify all plots
 prettify:
 	common/scripts/prettify_all.py && common/scripts/prettify_all.py && common/scripts/prettify_all.py && common/scripts/prettify_all.py
