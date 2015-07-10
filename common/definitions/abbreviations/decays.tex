@@ -5,6 +5,7 @@
 
 \renewcommand{\to}            {\ensuremath{\rightarrow}\xspace}
 \newcommand{\decay}[2]        {\ensuremath{#1\!\to #2}\xspace}
+\newcommand{\decaybf}[2]      {\ensuremath{#1\!\pmb{\to} #2}\xspace} % the \pmb command fakes a bold font by multiple overlays of the same character. TODO: find a better solution (cc, 20150710)
 
 %% X particle
 \newmathsymbol{\Xparticle}      {X\xspace}
@@ -45,37 +46,37 @@
 
 %% Decays to be used in headings with bold, sans, italic math font (makes sure 
 %  all characters use the proper font)
-\newcommand{\BdToJpsiKSbfsf}  {\ensuremath{\mathbfsfit{
-  \decay{\B^{\mathbfsfup{0}}}{\jpsi K_\text{S}^{\mathbfsfup{0}}}   
-}}\xspace}
-\newcommand{\BsToJpsiKSbfsf}  {\ensuremath{\mathbfsfit{
-  \decay{\B_\squark^{\mathbfsfup{0}}}{\jpsi K_\text{S}^{\mathbfsfup{0}}}   
-}}\xspace}
-\newcommand{\BsdToJpsiKSbfsf} {\ensuremath{\mathbfsfit{
-  \decay{\B_{(\squark)}^{\mathbfsfup{0}}}{\jpsi K_\text{S}^{\mathbfsfup{0}}}   
-}}\xspace}
-\newcommand{\BToJpsiKSbfsf}   {\ensuremath{\mathbfsfit{
-  \decay{\B}{\jpsi K_\text{S}^{\mathbfsfup{0}}}   
-}}\xspace}
-\newcommand{\BToJpsiKstarbfsf}{\ensuremath{\mathbfsfit{
-  \decay{\B}{\jpsi K^{\mathsf{\ast}}}   
-}}\xspace}
-\newcommand{\BdToJpsiKstarbfsf}{\ensuremath{\mathbfsfit{
-  \decay{\B^{\mathbfsfup{0}}}{\jpsi K^{\mathsf{\ast}}}   
-}}\xspace}
-\newcommand{\BdToJpsiKstarzbfsf}{\ensuremath{\mathbfsfit{
-  \decay{\B^{\mathbfsfup{0}}}{\jpsi K^{\mathsf{\ast}\mathbfsfup{0}}}   
-}}\xspace}
-\newcommand{\BToJpsiXbfsf}{\ensuremath{\mathbfsfit{
-  \decay{\B}{\jpsi X}
-}}\xspace}
-\newcommand{\jpsibfsf}{\ensuremath{\mathbfsfit{\jpsi}}\xspace}
-\newcommand{\JpsiTomumubfsf}{\ensuremath{\mathbfsfit{
-  \decay{\jpsi}{\mumu}
-}}\xspace}
+\newcommand{\BToJpsiKSbfsf}{\ensuremath{
+  \decaybf{\Bbfsf}{\Jpsibfsf \KSbfsf}
+}\xspace}
+\newcommand{\BdToJpsiKSbfsf}{\ensuremath{
+  \decaybf{\Bdbfsf}{\Jpsibfsf \KSbfsf}
+}\xspace}
+\newcommand{\BsToJpsiKSbfsf}{\ensuremath{
+  \decaybf{\Bsbfsf}{\Jpsibfsf \KSbfsf}
+}\xspace}
+\newcommand{\BdToJpsiKstarbfsf}{\ensuremath{
+  \decaybf{\Bdbfsf}{\Jpsibfsf \Kstarbfsf}   
+}\xspace}
+\newcommand{\BdToJpsiKstarzbfsf}{\ensuremath{
+  \decaybf{\Bdbfsf}{\Jpsibfsf \Kstarzbfsf}   
+}\xspace}
 \newcommand{\BuToJpsiKbfsf}{\ensuremath{
-  \mathbfsfit{\decay{\B^{\mathbf{+}}}{\jpsi\Kaon^{\mathbf{+}}}
-}}\xspace}
+  \decaybf{\Bubfsf}{\Jpsibfsf\Kpbfsf}
+}\xspace}
+\newcommand{\JpsiTomumubfsf}{\ensuremath{
+  \decaybf{\Jpsibfsf}{\mathbfsfit{\mumu}}
+}\xspace}
+\newcommand{\JpsiToMuMubfsf}{\JpsiTomumubfsf}
+\newcommand{\BsdToJpsiKSbfsf}{\ensuremath{
+  \decaybf{\Bsdbfsf}{\Jpsibfsf \KSbfsf}   
+}\xspace}
+\newcommand{\BToJpsiKstarbfsf}{\ensuremath{
+  \decaybf{\Bbfsf}{\Jpsibfsf \Kstarbfsf}   
+}\xspace}
+\newcommand{\BToJpsiXbfsf}{\ensuremath{
+  \decaybf{\Bbfsf}{\Jpsibfsf \mathbfsfit{X}}
+}\xspace}
 
 %% Decays with hyperref-compatible text alternative
 \newcommand{\BdToJpsiKSbfsfHyperref}{\texorpdfstring{\BdToJpsiKSbfsf}{B0→J/ψKS0}\xspace}
