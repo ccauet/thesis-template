@@ -24,7 +24,10 @@
 % Optimizing typo
 \usepackage[final]{microtype}
 \usepackage{xspace}
-
+% adding csquotes end of argument marker to the xspace list of exceptions
+\makeatletter
+\xspaceaddexceptions{\csq@qclose@i}
+\makeatletter
 
 
 
