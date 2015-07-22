@@ -28,6 +28,9 @@
 
 \DeclareSIUnit\lumi{\per\square\centi\metre\per\second}
 
+% Slightly optimising the kerning for eV
+\DeclareSIUnit\electronvolt{\electron\kern-.1em \volt}
+
 \DeclareSIUnit[per-mode=symbol]\keV{\kilo\eV}
 \DeclareSIUnit[per-mode=symbol]\MeV{\mega\eV}
 \DeclareSIUnit[per-mode=symbol]\GeV{\giga\eV}
@@ -46,3 +49,6 @@
 \DeclareSIUnit[per-mode=symbol]\TeVcc{\tera\eV\per\square\clight}
 
 \DeclareSIUnit[number-unit-product = \,]{\permille}{\textperthousand}
+
+% Tm as new unit; no way to auto-optimise kerning here
+\DeclareSIUnit\Tm{\tesla\kern-0.07em\meter}
