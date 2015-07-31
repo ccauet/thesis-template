@@ -122,6 +122,15 @@ To make todos inline by default:
 Create word count for all files in [private/content/](/private/content) and write log file including timestamp to [private/](/private/).
 _Dependencies_: [texcount](http://app.uio.no/ifi/texcount/) and the python modules: os, [pexpect](https://pexpect.readthedocs.org/en/latest/), fnmatch, datetime, [pytz](http://pytz.sourceforge.net)
 
+It is possible to automatically append the current word count to the log file each time a commit to the private repository is made. To do so, just add a pre-commit hook to the private repository. Go to `private/.git/hooks` and create a file `pre-commit`, then add:
+
+```
+#!/bin/sh
+./common/wordcount.py --silent --exclude-appendix
+git add wordcount.txt
+```
+
+
 ***[common/scripts/plot_wordcount.py](common/scripts/plot_wordcount.py)***   
 Script to parse and plot the word count log file. _Dependencies_: argparse, numpy, matplotlib, datetime
 
