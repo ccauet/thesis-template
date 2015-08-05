@@ -1,10 +1,11 @@
 %!TEX root = ../../main.tex
 
 % To-do notes
-\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorinlistoftodos,obeyDraft]{todonotes}
 % Modified listoftodos and todo commands to include a link pointing back to the
 % list of todos for every todo item
 \makeatletter
+\ifbool{@todonotes@disabled}{}{
   \renewcommand{\listoftodos}[1][\@todonotes@todolistname]{%
     \@ifundefined{chapter}{%
       \protect{\hypertarget{todonoteslist}{\section*{#1}}}}
@@ -13,6 +14,7 @@
     }%
     \@starttoc{tdo}%
   }
+}
 \makeatother
 \LetLtxMacro{\temptodo}{\todo}
 \renewcommand{\todo}[2][]{%
