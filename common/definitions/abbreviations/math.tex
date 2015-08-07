@@ -49,3 +49,22 @@
 
 %% unity element 1
 \newmathsymbol{\unity}{\mathbb{1}}
+
+%% Column vector
+%% Usage: \colvec{3}{d}{s}{b}
+\newcount\colveccount
+\newcommand*\colvec[1]{
+        \global\colveccount#1
+        \begin{pmatrix}
+        \colvecnext
+}
+\def\colvecnext#1{
+        #1
+        \global\advance\colveccount-1
+        \ifnum\colveccount>0
+                \\
+                \expandafter\colvecnext
+        \else
+                \end{pmatrix}
+        \fi
+}
