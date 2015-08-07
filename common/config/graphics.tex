@@ -1,7 +1,10 @@
 %!TEX root = ../../main.tex
 
-% Include graphics
-\usepackage{graphicx}
+% Include graphicx, can be excluded if tikz package is loaded
+% \usepackage{graphicx}
+% enforce final mode for graphicx package
+% http://tex.stackexchange.com/questions/95334/how-can-i-set-the-final-option-for-the-graphicx-package-in-xetex
+\setkeys{Gin}{draft=false}
 
 % rotating package for sidewaysfigure
 \usepackage{rotating}

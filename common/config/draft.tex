@@ -44,8 +44,10 @@
 \usepackage[pangram]{blindtext}
 
 % Linenumbers
-% add \linenumbers after \begin{document} to activate line numbering
+% add \setbool{setlinenumbers}{true} in your private config to activate line numbering
 \usepackage{lineno}
+\newbool{setlinenumbers}
+\setbool{setlinenumbers}{false}
 
 % fix to allow peaceful coexistence of line numbering and
 % mathematical objects
