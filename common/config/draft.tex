@@ -5,7 +5,9 @@
 % Modified listoftodos and todo commands to include a link pointing back to the
 % list of todos for every todo item
 \makeatletter
-\ifbool{@todonotes@disabled}{}{
+\ifbool{@todonotes@disabled}{
+  \renewcommand{\listoftodos}[1][]{}
+}{
   \renewcommand{\listoftodos}[1][\@todonotes@todolistname]{%
     \@ifundefined{chapter}{%
       \protect{\hypertarget{todonoteslist}{\section*{#1}}}}
