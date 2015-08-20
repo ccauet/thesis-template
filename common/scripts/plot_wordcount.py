@@ -34,8 +34,8 @@ if __name__ == "__main__":
 
   ax_right = ax_left.twinx()
   ax_right.set_ylabel('Approx. no. of pages', color='r')
-  ax_right.set_ylim(0, 125)
-  ax_right.yaxis.set_ticks(range(0,125,10))
+  ax_right.set_ylim(0, 130)
+  ax_right.yaxis.set_ticks(range(0,130,10))
   ax_right.plot_date(dates, pages, 'r-', xdate=True)
   for tl in ax_right.get_yticklabels():
       tl.set_color('r')
